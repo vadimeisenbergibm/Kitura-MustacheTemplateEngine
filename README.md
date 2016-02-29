@@ -1,2 +1,2 @@
-# Kitura-Templating
-Handling Tempting Engines for Kitura
+# Kitura-MustacheTemplateEngine
+Adapter of GRMoustache Template Engine to Kitura Template Engine
