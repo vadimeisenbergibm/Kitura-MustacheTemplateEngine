@@ -19,7 +19,7 @@ import KituraTemplateEngine
 import Mustache
 #endif
 
-public class KituraMustacheTemplateEngine: TemplateEngine {
+public class MustacheTemplateEngine: TemplateEngine {
     public var fileExtension: String? { return "mustache" }
     public init() {}
 
