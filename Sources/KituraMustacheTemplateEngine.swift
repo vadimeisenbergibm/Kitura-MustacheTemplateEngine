@@ -25,12 +25,16 @@ public class MustacheTemplateEngine: TemplateEngine {
 
     public func render(filePath: String, context: [String: Any]) throws -> String {
         #if os(Linux)
-            return "support for GRMustache not yet implemented on Linux"
+        return "support for GRMustache not yet implemented on Linux"
         #else
         let template = try Template(path: filePath)
         // currently use type conversion to [String: AnyObject], works only in OS X
-        let contextBox = Box(context as! [String: AnyObject])
-        return try template.render(contextBox)
+        var contextWithAnyObjects = [String: AnyObject]()
+        for (key, value) in context {
+            contextWithAnyObjects[key] = value as? AnyObject
+        }
+
+        return try template.render(Box(contextWithAnyObjects))
         #endif
     }
 }
