@@ -15,7 +15,7 @@
  **/
 
 import KituraTemplateEngine
-#if os(OSX)
+#if !os(Linux)
 import Mustache
 #endif
 
