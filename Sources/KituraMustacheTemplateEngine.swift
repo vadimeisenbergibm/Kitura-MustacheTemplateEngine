@@ -34,7 +34,7 @@ public class MustacheTemplateEngine: TemplateEngine {
             contextWithAnyObjects[key] = value as? AnyObject
         }
 
-        return try template.render(Box(contextWithAnyObjects))
+        return try template.render(with: Box(contextWithAnyObjects))
         #endif
     }
 }
