@@ -22,5 +22,6 @@ let package = Package(
                             majorVersion: 0, minor: 16)])
 
 #if os(OSX)
-    package.dependencies.append(.Package(url: "https://github.com/IBM-Swift/GRMustache.swift.git", majorVersion: 1, minor: 2))
+    package.dependencies.append(.Package(url: "https://github.com/IBM-Swift/GRMustache.swift.git",
+                                         Version(1, 2, 2)))
 #endif
