@@ -28,7 +28,7 @@ public class MustacheTemplateEngine: TemplateEngine {
         return "support for GRMustache not yet implemented on Linux"
         #else
         let template = try Template(path: filePath)
-        return try template.render(with: Box(context))
+        return try template.render(context)
         #endif
     }
 }
