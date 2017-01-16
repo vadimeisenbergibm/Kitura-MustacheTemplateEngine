@@ -18,9 +18,9 @@ import PackageDescription
 
 let package = Package(
     name: "KituraMustache",
-    dependencies: [.Package(url: "https://github.com/IBM-Swift/Kitura-TemplateEngine.git", majorVersion: 1, minor: 4)])
+    dependencies: [.Package(url: "https://github.com/IBM-Swift/Kitura-TemplateEngine.git", majorVersion: 1, minor: 5)])
 
 #if os(OSX)
     package.dependencies.append(.Package(url: "https://github.com/IBM-Swift/GRMustache.swift.git",
-                                         majorVersion: 1, minor: 4))
+                                         majorVersion: 1, minor: 5))
 #endif
