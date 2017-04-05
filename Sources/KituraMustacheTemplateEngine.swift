@@ -24,9 +24,9 @@ public class MustacheTemplateEngine: TemplateEngine {
     public init() {}
 
     public func render(filePath: String, context: [String: Any]) throws -> String {
-        #if os(Linux) && !swift(>=3.1)
-            return "GRMustache is not supported on Linux with swift version less than 3.1.\n" +
-                     "Please update your swift to version greater or equal than 3.1"
+        #if os(Linux) && !swift(>=3.1) // using !swift(>=3.1) since < is not allowed in version conditions
+            return "GRMustache is not supported on Linux with Swift version less than 3.1.\n" +
+                     "Please update your Swift to version greater or equal than 3.1"
         #else
         let template = try Template(path: filePath)
         return try template.render(with: Box(context))
