@@ -20,7 +20,7 @@ let package = Package(
     name: "KituraMustache",
     dependencies: [.Package(url: "https://github.com/IBM-Swift/Kitura-TemplateEngine.git", majorVersion: 1, minor: 7)])
 
-#if os(OSX)
+#if os(OSX) || swift(>=3.1)
     package.dependencies.append(.Package(url: "https://github.com/IBM-Swift/GRMustache.swift.git",
                                          majorVersion: 1, minor: 7))
 #endif
