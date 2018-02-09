@@ -52,8 +52,9 @@ The files which have been edited in this example, are structured as follows:
 The `Views` Folder and `Example.mustache` file will be created later on in this example, since they are not initialized by `Kitura init`.
 
 #### Package.swift
-defined ["https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git"](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git)  as a dependency.
-add "KituraMustache" to the targets for Application.
+Define ["https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git"](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git)  as a dependency.
+
+Add "KituraMustache" to the targets for Application.
 
 #### Application.swift
 Inside the `Application.swift` file, add the following code to render the `Example.mustache` template file on the "/winner" route.
