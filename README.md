@@ -78,7 +78,7 @@ router.get("/winner") { _, response, next in
 ```
 
 #### Example.mustache
-Create the `Views` folder and put the following Stencil template code into a file called `Example.mustache` in this directory. This template will insert a count of the number of articles followed by a list of the articles and their authors.
+Create the `Views` folder and put the following Mustache template code into a file called `Example.mustache` in this directory. This template will congratulate the winner by name and tell them their winnings. If the winnings are subject to tax, it will tell them their taxed winnings.
 
 ```
 <html>
