@@ -37,10 +37,10 @@ By default the Kitura Router will look in the 'Views' folder for Mustache templa
 ## Example
 The following is an example of a server generated using `Kitura init` that serves Mustache-formatted text from a `.mustache` file.
 
-After `Kitura init` the files we are interested in will have the following structure:
+The files which have been edited in this example, are structured as follows:
 
 <pre>
-ServerRepository
+<ServerRepository>
 ├── Package.swift
 ├── Sources
 │    └── Application
@@ -49,18 +49,20 @@ ServerRepository
 └── Example.mustache
 </pre>
 
+The `Views` Folder and `Example.mustache` file will be created later on in this example, since they are not initialized by `Kitura init`.
+
 ### Package.swift
-"https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git" is defined as a dependency
-"KituraMustache" added to the targets for Application
+defined ["https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git"](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git)  as a dependency.
+add "KituraMustache" to the targets for Application.
 
 ### Application.swift
-Inside the Application.swift file, the following code is added to render and serve the "Example.mustache" template to the route "/winner"
+Inside the `Application.swift` file, add the following code to render the `Example.mustache` template file on the "/winner" route.
 
 ```swift
 import KituraMustache
 ```
 
-Inside the `postInit()` function:
+Add the following code inside the `postInit()` function:
 
 ```swift
 router.add(templateEngine: MustacheTemplateEngine())
@@ -75,19 +77,19 @@ router.get("/winner") { _, response, next in
 ```
 
 ### Example.mustache
-The following template will insert the number of articles followed by a list of the articles and their authors.
+Create the `Views` folder and put the following Stencil template code into a file called `Example.mustache` in this directory. This template will insert a count of the number of articles followed by a list of the articles and their authors.
 
 ```
 <html>
-Hello {{name}}
-You have just won {{value}} dollars!
-{{#in_ca}}
-Well, {{taxed_value}} dollars, after taxes.
-{{/in_ca}}
+    Hello {{name}}
+    You have just won {{value}} dollars!
+    {{#in_ca}}
+        Well, {{taxed_value}} dollars, after taxes.
+    {{/in_ca}}
 </html>
 ```
 
-When the server is running, go to [http://localhost:8080/employees](http://localhost:8080/employees) to view the rendered Mustache template.
+Run the application and once the server is running, go to [http://localhost:8080/employees](http://localhost:8080/employees) to view the rendered Mustache template.
 
 ## License
 This library is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
