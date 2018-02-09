@@ -51,11 +51,11 @@ The files which have been edited in this example, are structured as follows:
 
 The `Views` Folder and `Example.mustache` file will be created later on in this example, since they are not initialized by `Kitura init`.
 
-### Package.swift
+#### Package.swift
 defined ["https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git"](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git)  as a dependency.
 add "KituraMustache" to the targets for Application.
 
-### Application.swift
+#### Application.swift
 Inside the `Application.swift` file, add the following code to render the `Example.mustache` template file on the "/winner" route.
 
 ```swift
@@ -76,7 +76,7 @@ router.get("/winner") { _, response, next in
 }
 ```
 
-### Example.mustache
+#### Example.mustache
 Create the `Views` folder and put the following Stencil template code into a file called `Example.mustache` in this directory. This template will insert a count of the number of articles followed by a list of the articles and their authors.
 
 ```
