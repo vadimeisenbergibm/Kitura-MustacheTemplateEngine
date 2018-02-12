@@ -71,7 +71,7 @@ router.get("/winner") { _, response, next in
     winnings = 10000
     var context: [String:Any] =
     ["name" : "Joe Bloggs", "winnings": winnings, "taxed_winnings": winnings * 0.6, "taxable" : true]
-    try response.render("Example.mustache", context: context).end()
+    try response.render("Example.mustache", context: context)
     response.status(.OK)
     next()
 }
