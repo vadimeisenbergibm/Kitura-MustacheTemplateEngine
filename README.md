@@ -21,7 +21,7 @@
 </p>
 
 # Kitura-MustacheTemplateEngine
-A Templating engine for Kitura that uses Mustache-based templates.
+A templating engine for Kitura that uses Mustache-based templates.
 
 ## Summary
 Kitura-MustacheTemplateEngine is a plugin for [Kitura Template Engine](https://github.com/IBM-Swift/Kitura-TemplateEngine.git) for using [GRMustache](https://github.com/IBM-Swift/GRMustache.swift.git) with the [Kitura](https://github.com/IBM-Swift/Kitura) server framework. This makes it easy to use Mustache templating, with a Kitura server, to create an HTML page with integrated Swift variables.
@@ -29,18 +29,18 @@ Kitura-MustacheTemplateEngine is a plugin for [Kitura Template Engine](https://g
 ## Mustache Template File
 The template file is basically HTML with gaps where we can insert code and variables. [GRMustache](https://github.com/IBM-Swift/GRMustache.swift.git) is a templating language used to write a template file and Kitura-MustacheTemplateEngine can use any standard Mustache template.
 
-[Mustache manual](https://mustache.github.io/mustache.5.html) provides documentation and examples on writing a Mustache Template File.
+[Mustache manual](https://mustache.github.io/mustache.5.html) provides documentation and examples on how to write a Mustache Template File.
 
-By default the Kitura Router will look in the 'Views' folder for Mustache template files with the extension '.mustache'.
+By default the Kitura Router will look in the `Views` folder for Mustache template files with the extension `.mustache`.
 
 
 ## Example
-The following is an example of a server generated using `Kitura init` that serves Mustache-formatted text from a `.mustache` file.
+The following example takes a server generated using `kitura init` and modifies it to serve Mustache-formatted text from a `.mustache` file.
 
-The files which have been edited in this example, are structured as follows:
+The files which will be edited in this example, are as follows:
 
 <pre>
-<ServerRepository>
+&lt;ServerRepositoryName&gt;
 ├── Package.swift
 ├── Sources
 │    └── Application
@@ -49,15 +49,14 @@ The files which have been edited in this example, are structured as follows:
 └── Example.mustache
 </pre>
 
-The `Views` Folder and `Example.mustache` file will be created later on in this example, since they are not initialized by `Kitura init`.
+The `Views` folder and `Example.mustache` file will be created later on in this example, since they are not initialized by `kitura init`.
 
 #### Package.swift
-Define ["https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git"](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git)  as a dependency.
-
-Add "KituraMustache" to the targets for Application.
+* Define ["https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git"](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git)  as a dependency.
+* Add "KituraMustache" to the targets for Application.
 
 #### Application.swift
-Inside the `Application.swift` file, add the following code to render the `Example.mustache` template file on the "/winner" route.
+Inside the `Application.swift` file, add the following code to render the `Example.mustache` template file on the "/winner" route:
 
 ```swift
 import KituraMustache
@@ -78,7 +77,7 @@ router.get("/winner") { _, response, next in
 ```
 
 #### Example.mustache
-Create the `Views` folder and put the following Mustache template code into a file called `Example.mustache` in this directory. This template will congratulate the winner by name and tell them their winnings. If the winnings are subject to tax, it will tell them their taxed winnings.
+Create the `Views` folder and put the following Mustache template code into a file called `Example.mustache`:
 
 ```
 <html>
@@ -89,9 +88,9 @@ Create the `Views` folder and put the following Mustache template code into a fi
     {{/in_ca}}
 </html>
 ```
+This template will congratulate the winner by name and tell them their winnings. If the winnings are subject to tax, it will tell them their taxed winnings.
 
 Run the application and once the server is running, go to [http://localhost:8080/employees](http://localhost:8080/employees) to view the rendered Mustache template.
 
 ## License
-This library is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
-
+This library is licensed under Apache 2.0. Full license text is available in [LICENSE](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine/blob/master/LICENSE.txt).
