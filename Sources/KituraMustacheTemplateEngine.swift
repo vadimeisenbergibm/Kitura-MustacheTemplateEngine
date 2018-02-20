@@ -15,21 +15,14 @@
  **/
 
 import KituraTemplateEngine
-#if !os(Linux) || swift(>=3.1)
 import Mustache
-#endif
 
 public class MustacheTemplateEngine: TemplateEngine {
     public var fileExtension: String { return "mustache" }
     public init() {}
 
     public func render(filePath: String, context: [String: Any]) throws -> String {
-        #if os(Linux) && !swift(>=3.1) // using !swift(>=3.1) since < is not allowed in version conditions
-            return "GRMustache is not supported on Linux with Swift version less than 3.1.\n" +
-                     "Please update your Swift to version greater or equal than 3.1"
-        #else
         let template = try Template(path: filePath)
         return try template.render(with: Box(context))
-        #endif
     }
 }
