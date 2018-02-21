@@ -9,6 +9,9 @@
 <a href="http://www.kitura.io/">
 <img src="https://img.shields.io/badge/docs-kitura.io-1FBCE4.svg" alt="Docs">
 </a>
+<a href="https://travis-ci.org/IBM-Swift/Kitura-MustacheTemplateEngine">
+<img src="https://travis-ci.org/IBM-Swift/Kitura-MustacheTemplateEngine.svg?branch=master" alt="Build Status - Master">
+</a>
 <img src="https://img.shields.io/badge/os-Mac%20OS%20X-green.svg?style=flat" alt="Mac OS X">
 <img src="https://img.shields.io/badge/os-linux-green.svg?style=flat" alt="Linux">
 <img src="https://img.shields.io/badge/license-Apache2-blue.svg?style=flat" alt="Apache 2">
