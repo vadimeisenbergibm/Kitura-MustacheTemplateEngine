@@ -19,14 +19,18 @@ import Mustache
 import Foundation
 
 // MustacheTemplateEngineError for Error handling.
-// unableToCastJSONToDict - Thrown when unable to cast 'json' value to a [String: Any]
-// unableToEncodeValue(value: Encodable) - Thrown when unable to encode the Encodable value provided to data.
-// unableToIntialiseTemplateWithFilePath(path: String) - Thrown when the inialisation of Template() fails.
-// unableToRenderContext(context: [String: Any]) - Thrown when GRMustache fails to render the context with the given template.
 public enum MustacheTemplateEngineError: Swift.Error {
+    
+    // unableToCastJSONToDict - Thrown when unable to cast 'json' value to a [String: Any]
     case unableToCastJSONToDict
+    
+    // unableToEncodeValue(value: Encodable) - Thrown when unable to encode the Encodable value provided to data.
     case unableToEncodeValue(value: Encodable)
-    case unableToIntialiseTemplateWithFilePath(path: String)
+    
+    // unableToIntializeTemplateWithFilePath(path: String) - Thrown when the inialization of Template() fails.
+    case unableToIntializeTemplateWithFilePath(path: String)
+    
+    // unableToRenderContext(context: [String: Any]) - Thrown when GRMustache fails to render the context with the given template.
     case unableToRenderContext(context: [String: Any])
 }
 
@@ -62,7 +66,7 @@ public class MustacheTemplateEngine: TemplateEngine {
         do {
             template = try Template(path: filePath)
         } catch {
-            throw MustacheTemplateEngineError.unableToIntialiseTemplateWithFilePath(path: filePath)
+            throw MustacheTemplateEngineError.unableToIntializeTemplateWithFilePath(path: filePath)
         }
         do {
             let result = try template.render(with: Box(context))
