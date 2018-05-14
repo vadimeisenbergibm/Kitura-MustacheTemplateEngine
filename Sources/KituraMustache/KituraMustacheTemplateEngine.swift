@@ -21,16 +21,16 @@ import Foundation
 // MustacheTemplateEngineError for Error handling.
 public enum MustacheTemplateEngineError: Swift.Error {
     
-    // unableToCastJSONToDict - Thrown when unable to cast 'json' value to a [String: Any]
+    // Thrown when unable to cast 'json' value to a [String: Any].
     case unableToCastJSONToDict
     
-    // unableToEncodeValue(value: Encodable) - Thrown when unable to encode the Encodable value provided to data.
+    // Thrown when unable to encode the Encodable value provided to data.
     case unableToEncodeValue(value: Encodable)
     
-    // unableToIntializeTemplateWithFilePath(path: String) - Thrown when the inialization of Template() fails.
+    // Thrown when the inialization of Template() fails.
     case unableToIntializeTemplateWithFilePath(path: String)
     
-    // unableToRenderContext(context: [String: Any]) - Thrown when GRMustache fails to render the context with the given template.
+    // Thrown when GRMustache fails to render the context with the given template.
     case unableToRenderContext(context: [String: Any])
 }
 
