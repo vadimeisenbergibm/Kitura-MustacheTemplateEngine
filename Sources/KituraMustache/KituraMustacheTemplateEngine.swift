@@ -28,7 +28,7 @@ public enum MustacheTemplateEngineError: Swift.Error {
     case unableToEncodeValue(value: Encodable)
     
     // Thrown when the inialization of Template() fails.
-    case unableToIntializeTemplateWithFilePath(path: String)
+    case unableToInitializeTemplateWithFilePath(path: String)
     
     // Thrown when GRMustache fails to render the context with the given template.
     case unableToRenderContext(context: [String: Any])
@@ -66,7 +66,7 @@ public class MustacheTemplateEngine: TemplateEngine {
         do {
             template = try Template(path: filePath)
         } catch {
-            throw MustacheTemplateEngineError.unableToIntializeTemplateWithFilePath(path: filePath)
+            throw MustacheTemplateEngineError.unableToInitializeTemplateWithFilePath(path: filePath)
         }
         do {
             let result = try template.render(with: Box(context))
