@@ -46,7 +46,7 @@ public class MustacheTemplateEngine: TemplateEngine {
         //Throw an error if an array is passed without providing a key.
         if key == nil {
             let mirror = Mirror(reflecting: value)
-            if mirror.displayStyle == .collection {
+            if mirror.displayStyle == .collection || mirror.displayStyle == .set {
                 throw MustacheTemplateEngineError.noKeyProvidedForType(value: value)
             }
         }
