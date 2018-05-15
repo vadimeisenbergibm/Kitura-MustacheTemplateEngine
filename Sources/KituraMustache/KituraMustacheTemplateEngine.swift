@@ -32,6 +32,9 @@ public enum MustacheTemplateEngineError: Swift.Error {
     
     // Thrown when GRMustache fails to render the context with the given template.
     case unableToRenderContext(context: [String: Any])
+    
+    //Thrown when an array or set of Encodables is passed without a Key.
+    case noKeyProvidedForType(value: Encodable)
 }
 
 public class MustacheTemplateEngine: TemplateEngine {
@@ -40,7 +43,13 @@ public class MustacheTemplateEngine: TemplateEngine {
     
     public func render<T: Encodable>(filePath: String, with value: T, forKey key: String?,
                                    options: RenderingOptions, templateName: String) throws -> String {
-        
+        //Throw an error if an array is passed without providing a key.
+        if key == nil {
+            let mirror = Mirror(reflecting: value)
+            if mirror.displayStyle == .collection {
+                throw MustacheTemplateEngineError.noKeyProvidedForType(value: value)
+            }
+        }
         var data = Data()
         do {
             data = try JSONEncoder().encode(value)
