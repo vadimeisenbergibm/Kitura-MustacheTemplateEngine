@@ -78,8 +78,7 @@ public class MustacheTemplateEngine: TemplateEngine {
             throw MustacheTemplateEngineError.unableToInitializeTemplateWithFilePath(path: filePath)
         }
         do {
-            let result = try template.render(with: Box(context))
-            return result
+            return try template.render(with: Box(context))
         } catch {
             throw MustacheTemplateEngineError.unableToRenderContext(context: context)
         }
