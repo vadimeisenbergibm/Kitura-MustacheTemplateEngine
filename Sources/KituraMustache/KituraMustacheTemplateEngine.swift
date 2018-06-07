@@ -18,27 +18,51 @@ import KituraTemplateEngine
 import Mustache
 import Foundation
 
-// MustacheTemplateEngineError for Error handling.
+/// An Error type for use when describing errors that can occur while working with
+/// the `MustacheTemplateEngine` type.
 public enum MustacheTemplateEngineError: Swift.Error {
     
-    // Thrown when unable to cast 'json' value to a [String: Any].
+    /// Thrown when unable to cast 'json' value to a `[String: Any]`.
     case unableToCastJSONToDict
     
-    // Thrown when unable to encode the Encodable value provided to data.
+    /// Thrown when unable to encode the `Encodable` value provided to data.
     case unableToEncodeValue(value: Encodable)
     
-    // Thrown when the inialization of Template() fails.
+    /// Thrown when the inialization of `Mustache.Template()` fails.
     case unableToInitializeTemplateWithFilePath(path: String)
     
-    // Thrown when GRMustache fails to render the context with the given template.
+    /// Thrown when GRMustache fails to render the context with the given template.
     case unableToRenderContext(context: [String: Any])
     
-    //Thrown when an array or set of Encodables is passed without a Key.
+    /// Thrown when a `[Encodable]` or `Set<Encodable>` is passed without a Key.
     case noKeyProvidedForType(value: Encodable)
 }
 
+/**
+ A `TemplateEngine` for Kitura that uses [GRMustache](https://github.com/IBM-Swift/GRMustache.swift) for templating.
+
+ The default file extension for templates using this engine is `mustache`. If you do
+ not explicitly provide a file extension in the call to `response.render` then this
+ extension will be applied automatically.
+
+ ### Usage Example: ###
+ ```swift
+    router.add(templateEngine: MustacheTemplateEngine())
+
+    // An example of using a dictionary of [String: Any] parameters to be rendered
+    router.get("/hello") { request, response, next in
+        try response.render("MustacheExample.mustache", context: ["name": "World!"]])
+        next()
+    }
+ ```
+ For more information on Mustache templating, see: https://www.kitura.io/guides/templating/mustachetemplate.html
+ */
 public class MustacheTemplateEngine: TemplateEngine {
+
+    /// The file extension of files rendered by the KituraMustache template engine: `mustache`
     public var fileExtension: String { return "mustache" }
+    
+    /// Initializes a KituraMustache template engine.
     public init() {}
     
     public func render<T: Encodable>(filePath: String, with value: T, forKey key: String?,
