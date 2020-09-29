@@ -22,10 +22,10 @@
 # Kitura-MustacheTemplateEngine
 A templating engine for Kitura that uses Mustache-based templates.
 
-Kitura-MustacheTemplateEngine is a plugin for [Kitura Template Engine](https://github.com/Kitura/Kitura-TemplateEngine.git) for using [GRMustache](https://github.com/Kitura/GRMustache.swift.git) with the [Kitura](https://github.com/Kitura/Kitura) server framework. This makes it easy to use Mustache templating, with a Kitura server, to create an HTML page with integrated Swift variables.
+Kitura-MustacheTemplateEngine is a plugin for [Kitura Template Engine](https://github.com/Kitura/Kitura-TemplateEngine.git) for using [GRMustache](https://github.com/IBM-Swift-Sunset/GRMustache.swift) with the [Kitura](https://github.com/Kitura/Kitura) server framework. This makes it easy to use Mustache templating, with a Kitura server, to create an HTML page with integrated Swift variables.
 
 ## Mustache Template File
-The template file is basically HTML with gaps where we can insert code and variables. [GRMustache](https://github.com/Kitura/GRMustache.swift.git) is a templating language used to write a template file and Kitura-MustacheTemplateEngine can use any standard Mustache template.
+The template file is basically HTML with gaps where we can insert code and variables. [GRMustache](https://github.com/IBM-Swift-Sunset/GRMustache.swift) is a templating language used to write a template file and Kitura-MustacheTemplateEngine can use any standard Mustache template.
 
 [Mustache manual](https://mustache.github.io/mustache.5.html) provides documentation and examples on how to write a Mustache template File.
 
