@@ -1,15 +1,15 @@
 <p align="center">
-    <a href="http://kitura.io/">
-    <img src="https://raw.githubusercontent.com/IBM-Swift/Kitura/master/Sources/Kitura/resources/kitura-bird.svg?sanitize=true" height="100" alt="Kitura">
+    <a href="http://kitura.dev/">
+    <img src="https://raw.githubusercontent.com/Kitura/Kitura/master/Sources/Kitura/resources/kitura-bird.svg?sanitize=true" height="100" alt="Kitura">
     </a>
 </p>
 
 <p align="center">
-    <a href="https://ibm-swift.github.io/Kitura-MustacheTemplateEngine/index.html">
+    <a href="https://kitura.github.io/Kitura-MustacheTemplateEngine/index.html">
     <img src="https://img.shields.io/badge/apidoc-KituraMustacheTemplateEngine-1FBCE4.svg?style=flat" alt="APIDoc">
     </a>
-    <a href="https://travis-ci.org/IBM-Swift/Kitura-MustacheTemplateEngine">
-    <img src="https://travis-ci.org/IBM-Swift/Kitura-MustacheTemplateEngine.svg?branch=master" alt="Build Status - Master">
+    <a href="https://travis-ci.org/Kitura/Kitura-MustacheTemplateEngine">
+    <img src="https://travis-ci.org/Kitura/Kitura-MustacheTemplateEngine.svg?branch=master" alt="Build Status - Master">
     </a>
     <img src="https://img.shields.io/badge/os-macOS-green.svg?style=flat" alt="macOS">
     <img src="https://img.shields.io/badge/os-linux-green.svg?style=flat" alt="Linux">
@@ -22,10 +22,10 @@
 # Kitura-MustacheTemplateEngine
 A templating engine for Kitura that uses Mustache-based templates.
 
-Kitura-MustacheTemplateEngine is a plugin for [Kitura Template Engine](https://github.com/IBM-Swift/Kitura-TemplateEngine.git) for using [GRMustache](https://github.com/IBM-Swift/GRMustache.swift.git) with the [Kitura](https://github.com/IBM-Swift/Kitura) server framework. This makes it easy to use Mustache templating, with a Kitura server, to create an HTML page with integrated Swift variables.
+Kitura-MustacheTemplateEngine is a plugin for [Kitura Template Engine](https://github.com/Kitura/Kitura-TemplateEngine.git) for using [GRMustache](https://github.com/IBM-Swift-Sunset/GRMustache.swift) with the [Kitura](https://github.com/Kitura/Kitura) server framework. This makes it easy to use Mustache templating, with a Kitura server, to create an HTML page with integrated Swift variables.
 
 ## Mustache Template File
-The template file is basically HTML with gaps where we can insert code and variables. [GRMustache](https://github.com/IBM-Swift/GRMustache.swift.git) is a templating language used to write a template file and Kitura-MustacheTemplateEngine can use any standard Mustache template.
+The template file is basically HTML with gaps where we can insert code and variables. [GRMustache](https://github.com/IBM-Swift-Sunset/GRMustache.swift) is a templating language used to write a template file and Kitura-MustacheTemplateEngine can use any standard Mustache template.
 
 [Mustache manual](https://mustache.github.io/mustache.5.html) provides documentation and examples on how to write a Mustache template File.
 
@@ -35,10 +35,10 @@ By default the Kitura Router will look in the `Views` folder for Mustache templa
 
 #### Add dependencies
 
-Add the `Kitura-MustacheTemplateEngine` package to the dependencies within your application’s `Package.swift` file. Substitute `"x.x.x"` with the latest `Kitura-MustacheTemplateEngine` [release](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine/releases).
+Add the `Kitura-MustacheTemplateEngine` package to the dependencies within your application’s `Package.swift` file. Substitute `"x.x.x"` with the latest `Kitura-MustacheTemplateEngine` [release](https://github.com/Kitura/Kitura-MustacheTemplateEngine/releases).
 
 ```swift
-.package(url: "https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine.git", from: "x.x.x")
+.package(url: "https://github.com/Kitura/Kitura-MustacheTemplateEngine.git", from: "x.x.x")
 ```
 
 Add `KituraMustache` to your target's dependencies:
@@ -114,11 +114,11 @@ Run the application and once the server is running, go to [http://localhost:8080
 
 ## API documentation
 
-For more information visit our [API reference](http://ibm-swift.github.io/Kitura-MustacheTemplateEngine/).
+For more information visit our [API reference](http://kitura.github.io/Kitura-MustacheTemplateEngine/).
 
 ## Community
 
 We love to talk server-side Swift, and Kitura. Join our [Slack](http://swift-at-ibm-slack.mybluemix.net/) to meet the team!
 
 ## License
-This library is licensed under Apache 2.0. Full license text is available in [LICENSE](https://github.com/IBM-Swift/Kitura-MustacheTemplateEngine/blob/master/LICENSE.txt).
+This library is licensed under Apache 2.0. Full license text is available in [LICENSE](https://github.com/Kitura/Kitura-MustacheTemplateEngine/blob/master/LICENSE.txt).
