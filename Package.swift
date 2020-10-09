@@ -29,7 +29,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/Kitura/Kitura-TemplateEngine.git", from: "2.0.0"),
+        .package(url: "https://github.com/Kitura/Kitura-TemplateEngine.git", from: "2.0.200"),
         .package(url: "https://github.com/IBM-Swift-Sunset/GRMustache.swift", from: "1.7.4")
     ],
     targets: [
